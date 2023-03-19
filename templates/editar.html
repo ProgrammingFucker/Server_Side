@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename ='css/edit.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Actualización de datos</div>
+        <div class="content">
+                       <form action="" method="POST">
+
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">ID</span>
+                        <input type="number" name="txtName" value= {{ session['no_emp']}}>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Nombre</span>
+                        <input type="text" name="txtName" value= {{ session['nombre']}}>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Apellido</span>
+                        <input type="text" name="txtApellido" value= {{ session['apellido']}}>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" name="txtEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">N&uacute;mero Celular</span>
+                        <input type="txt" name="phone" placeholder="3266875643">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Salario</span>
+                        <input type="number" name="txtSalario" placeholder="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Ciudad</span>
+                        <input type="text" name="txtCity" placeholder="Ciudad" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Fecha Nacimiento</span>
+                        <input type="text" name="f_nac" value= {{ session['f_nac']}}>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Fecha Ingreso</span>
+                        <input type="text" name="f_ingreso" placeholder="12/07/1998" required>
+                    </div>
+
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="mas" id="dot-1">
+                    <input type="radio" name="femenine" id="dot-2">
+                    <input type="radio" name="no" id="dot-3">
+                    <span class="gender-title">Genero</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender" name="mas">Masculino</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender" name="femenine">Femenino</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender" name="more">Prefiero no decirlo</span>
+                        </label>
+                    </div>
+                </div>
+                
+                    <button class="btn" type="submit" name="save">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

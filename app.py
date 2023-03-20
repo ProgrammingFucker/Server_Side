@@ -17,7 +17,7 @@ app.secret_key = ";:_"
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    return render_template('login.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -39,11 +39,14 @@ def login():
 
 @app.route('/route_admin')  # Administrador
 def route_admin():
+    sql = "SELECT * FROM empleados"
     cursor = mysql.connection.cursor()
-    cursor.execute('SELECT * FROM empleados')
-    data = cursor.fetchall()
+    cursor.execute(sql)
+    empleados = cursor.fetchall()
+    print(empleados)
     cursor.close()
-    return render_template('home.html', number=data)
+    return render_template('home.html', number=empleados)
+
 
 
 @app.route('/edit')  # Ruta Editar elementos sql
@@ -82,6 +85,10 @@ def delete(id):
     cursor.close()
 
 
+
+
+
+
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=3000, debug=True)
 

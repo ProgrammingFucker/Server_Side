@@ -87,22 +87,22 @@
 
                         <!-- El id del cuerpo de la tabla. -->
                         <tbody>
-                            {% for data in number %}
+                            {% for empleados in number %}
                             <tr>
 
-                                <td>{{data.0}}</td>
-                                <td>{{data.2}}</td>
-                                <td>{{data.3}}</td>
-                                <td>{{data.4}}</td>
-                                <td>{{data.5}}</td>
-                                <td>{{data.6}}</td>
-                                <td>{{data.7}}</td>
-                                <td>{{data.1}}</td>
-                                <td>{{data.8}}</td>
-                                <td><a href="/edit{{data[0]}}" class="btn btn-secondary btn-sm">Editar</a></td>
+                                <td>{{ empleados.0 }}</td>
+                                <td>{{ empleados.2 }}</td>
+                                <td>{{ empleados.3 }}</td>
+                                <td>{{ empleados.4 }}</td>
+                                <td>{{ empleados.5 }}</td>
+                                <td>{{ empleados.6 }}</td>
+                                <td>{{ empleados.7 }}</td>
+                                <td>{{ empleados.1 }}</td>
+                                <td>{{ empleados.8 }}</td>
+                                <td><a href="/edit{{empleados.0}}" class="btn btn-secondary btn-sm">Editar</a></td>
                                 <td>
                                     <form action="{{url_for('delete')}}" method="POST">
-                                        <input type="hidden" name="id" value="{{data[0]}}">
+                                        <input type="hidden" name="id" value="{{empleados[0]}}">
                                         <button class="button is-danger">Eliminar</button>
                                     </form>
                                 </td>
